@@ -1,5 +1,3 @@
-package br.edu.infnet.tp1;
-
 import java.util.Scanner;
 
 public class ControleAcademico {
