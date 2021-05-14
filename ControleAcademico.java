@@ -150,7 +150,7 @@ public class ControleAcademico {
         System.out.printf("\nNota Avaliação 2: %.1f", notasAV2[posInt]);
         System.out.printf("\nMédia das notas:  %.1f", media);
         System.out.printf("\nResultado final:  %s", resultado + "\n");
-        System.out.println("----------------------------------------\n");
+        System.out.println("---------------------------------------\n");
 
     }
 }
