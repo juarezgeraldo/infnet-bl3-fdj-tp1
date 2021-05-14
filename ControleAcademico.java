@@ -20,14 +20,12 @@ public class ControleAcademico {
         do {
             System.out.println("Sistema de controle acadêmico");
             System.out.println("=============================");
-            System.out.println();
-            System.out.println("Selecione uma das opções a seguir:\n");
+            System.out.println("Selecione uma das opções a seguir:");
             System.out.println("[1] Registrar as notas de um novo aluno.");
             System.out.println("[2] Consultar boletim de um aluno.");
             System.out.println("[3] Consultar notas da turma.");
             System.out.println("[4] Sair");
-
-            System.out.println("Informe a opção desejada");
+            System.out.println("\nInforme a opção desejada");
             opcao = in.next();
 
             switch (opcao) {
@@ -66,8 +64,6 @@ public class ControleAcademico {
             System.out.println("=======================================================");
             System.out.println("Quantidade limite para cadastramento de notas esgotado.");
             System.out.println("=======================================================\n\n");
-            System.out.println("Pressione uma tecla para continuar");
-            in.next();
         }
     }
 
@@ -92,17 +88,15 @@ public class ControleAcademico {
 
             System.out.println("\nConsultar notas da turma");
             System.out.println("------------------------\n");
-            System.out.println("Pos\tNome \t\tAV1 \tAV2 \tMédia \tResultado");
             for (int i = 0; i < indiceAluno; i++) {
 
                 imprimir(i);
             }
-            System.out.println("--------------------");
         } else {
+            System.out.println("=================================");
             System.out.println("Não há nennhum registro de aluno!");
+            System.out.println("=================================\n\n");
         }
-        System.out.println("Pressione uma tecla para continuar");
-        in.next();
     }
 
     private static void consultarNotasAluno() {
@@ -125,17 +119,14 @@ public class ControleAcademico {
             }
             System.out.println("\nConsultar notas do Aluno");
             System.out.println("------------------------\n");
-            System.out.println("Pos\tNome \t\tAV1 \tAV2 \tMédia \tResultado");
 
             imprimir(posInt);
 
-            System.out.println("--------------------");
         } else {
+            System.out.println("=================================");
             System.out.println("Não há nennhum registro de aluno!");
+            System.out.println("=================================\n\n");
         }
-
-        System.out.println("Pressione uma tecla para continuar");
-        in.next();
     }
     private static double calculaMediaNotas(int posicaoInt){
         return (notasAV1[posicaoInt] + notasAV2[posicaoInt]) / 2;
@@ -153,6 +144,13 @@ public class ControleAcademico {
     private static void imprimir(int posInt){
         double media = calculaMediaNotas(posInt);
         String resultado = retornaResultado(media);
-        System.out.printf("%d\t%s \t\t%.1f \t%.1f \t%.1f \t%s \n", posInt, nomes[posInt], notasAV1[posInt], notasAV2[posInt], media, resultado);
+        System.out.printf("Posição:          %d", posInt);
+        System.out.printf("\nNome do aluno:    %s", nomes[posInt]);
+        System.out.printf("\nNota Avaliação 1: %.1f", notasAV1[posInt]);
+        System.out.printf("\nNota Avaliação 2: %.1f", notasAV2[posInt]);
+        System.out.printf("\nMédia das notas:  %.1f", media);
+        System.out.printf("\nResultado final:  %s", resultado + "\n");
+        System.out.println("----------------------------------------\n");
+
     }
 }
